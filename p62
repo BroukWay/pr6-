@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите двоичную строку: ");
+        string binaryString = Console.ReadLine();
+
+        try
+        {
+            int decimalNumber = Convert.ToInt32(binaryString, 2);
+            Console.WriteLine("Десятичная запись: " + decimalNumber);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Ошибка: строка должна содержать только символы '0' и '1'.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Ошибка: число слишком велико.");
+        }
+    }
+}
