@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введите строку S:");
+        string S = Console.ReadLine();
+
+        Console.WriteLine("Введите подстроку So:");
+        string So = Console.ReadLine();
+
+        // Найти первую подстроку и удалить ее
+        int index = S.IndexOf(So);
+        if (index != -1)
+        {
+            S = S.Remove(index, So.Length);
+        }
+
+        Console.WriteLine("Результат:");
+        Console.WriteLine(S);
+    }
+}
